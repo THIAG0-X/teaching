@@ -1,0 +1,154 @@
+@import url('../global.css');
+
+:root {
+    --azul-principal: rgba(70, 110, 235, 0.65);
+    --azul-hover: rgba(70, 110, 235, 0.82);
+    --azul-foco: rgba(70, 110, 235, 0.55);
+    --texto-escuro: rgba(40, 40, 40, 0.92);
+    --texto-medio: rgba(80, 80, 80, 0.75);
+    --texto-suave: rgba(80, 80, 80, 0.55);
+    --branco-glass: rgba(255, 255, 255, 0.42);
+    --branco-glass-forte: rgba(255, 255, 255, 0.65);
+    --borda-glass: rgba(255, 255, 255, 0.45);
+    --borda-input: rgba(200, 200, 200, 0.75);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, 
+        rgb(190, 222, 252), 
+        rgb(190, 181, 255), 
+        rgb(172, 253, 253)
+    );
+}
+
+/* seção de login */
+.login_section {
+    width: 340px;
+    min-height: 420px;
+    padding: 40px 35px;
+    margin: auto;
+
+    /* glass */
+    background: var(--branco-glass);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1.5px solid var(--borda-glass);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_section > h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    letter-spacing: 0.5px;
+}
+
+.login_form {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* campo do formulário */
+.login_campo {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.login_campo > label {
+    z-index: 1;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: -10px;
+    margin-left: 10px;
+    color: var(--texto-medio);
+    transition: .3s ease;
+    background-color: transparent;
+    padding-inline: 4px;
+}
+
+.login_campo:hover > label,
+.login_campo:focus-within > label {
+    margin-bottom: 1px;
+    color: var(--azul-principal);
+    border-radius: 4px;
+}
+
+.login_campo > input {
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 14px;
+    outline: none;
+    color: var(--texto-escuro);
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 1.5px solid var(--borda-input);
+    transition: border-color .3s ease, background-color .3s ease, box-shadow .3s ease;
+    cursor: text;
+}
+
+.login_campo > input::placeholder {
+    color: var(--texto-suave);
+}
+
+.login_campo > input:focus {
+    border-color: var(--azul-foco);
+    background-color: var(--branco-glass-forte);
+    box-shadow: 0 0 0 3px rgba(70, 110, 235, 0.12);
+}
+
+/* botão */
+.login_btn {
+    width: 100%;
+    padding-block: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--borda-glass);
+    background-color: var(--azul-principal);
+    font-size: 15px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background-color .2s ease, transform .1s ease, box-shadow .2s ease;
+    box-shadow: 0 4px 14px rgba(70, 110, 235, 0.3);
+}
+
+.login_btn:hover {
+    background-color: var(--azul-hover);
+    box-shadow: 0 6px 18px rgba(70, 110, 235, 0.4);
+}
+
+.login_btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(70, 110, 235, 0.25);
+}
+
+/* links */
+a:link, a:visited {
+    text-decoration: none;
+    color: var(--texto-suave);
+    font-size: 13px;
+    transition: color .2s ease;
+}
+
+a:hover {
+    color: var(--azul-principal);
+}

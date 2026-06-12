@@ -1,5 +1,7 @@
 @import url('../global.css');
 
+
+
 .container {
     width: 100%;
     height: 100%;
@@ -13,8 +15,8 @@
     );
 }
 
-/* seção de login */
-.login_section {
+/* seção de registro */
+.register_section {
     width: 340px;
     min-height: 420px;
     padding: 40px 35px;
@@ -36,25 +38,25 @@
     justify-content: center;
 }
 
-.login_section > h1 {
+.register_section > h1 {
     font-size: 26px;
     font-weight: 700;
     color: var(--texto-escuro);
     letter-spacing: 0.5px;
 }
 
-.login_form {
+.register_form {
     width: 100%;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 15px;
     margin-top: 30px;
 }
 
 /* campo do formulário */
-.login_campo {
+.register_campo {
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -62,7 +64,7 @@
     margin-top: 10px;
 }
 
-.login_campo > label {
+.register_campo > label {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -79,8 +81,8 @@
     pointer-events: none;
 }
 
-.login_campo:hover > label,
-.login_campo:focus-within > label {
+.register_campo:hover > label,
+.register_campo:focus-within > label, .register_campo > input:not(:placeholder-shown) +    label {
     top: 0;
     transform: translateY(-50%);
     font-size: 12px;
@@ -88,7 +90,7 @@
     border-radius: 4px;
 }
 
-.login_campo > input {
+.register_campo > input {
     border-radius: 10px;
     padding: 11px 12px;
     font-size: 14px;
@@ -100,24 +102,25 @@
     cursor: text;
 }
 
-.login_campo > input::placeholder {
+.register_campo > input::placeholder {
     color: var(--texto-suave);
     opacity: 0;
     transition: opacity .3s ease;
 }
 
-.login_campo > input:focus {
+.register_campo > input:focus {
     border-color: var(--azul-foco);
     background-color: var(--branco-glass-forte);
     box-shadow: 0 0 0 3px rgba(70, 110, 235, 0.12);
 }
 
-.login_campo:focus-within, .login_campo:hover > input::placeholder {
+.register_campo:focus-within > input::placeholder,
+.register_campo:hover > input::placeholder {
     opacity: 1;
 }
 
 /* botão */
-.login_btn {
+.register_btn {
     width: 100%;
     padding-block: 12px;
     border-radius: 12px;
@@ -133,12 +136,12 @@
     box-shadow: 0 4px 14px rgba(70, 110, 235, 0.3);
 }
 
-.login_btn:hover {
+.register_btn:hover {
     background-color: var(--azul-hover);
     box-shadow: 0 6px 18px rgba(70, 110, 235, 0.4);
 }
 
-.login_btn:active {
+.register_btn:active {
     transform: scale(0.98);
     box-shadow: 0 2px 8px rgba(70, 110, 235, 0.25);
 }
@@ -155,36 +158,32 @@ a:hover {
     color: var(--azul-principal);
 }
 
-/* olho de senha */
-#olho_senha {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+/* lista de resistos de senha */
+
+.required_list {
+    width: 100%;
     color: var(--texto-medio);
+    font-size: 14px;
+    list-style: none;
+    margin-top: 10px;
 }
-
-/* floating label */
-.login_campo > input:not(:placeholder-shown) + label {
-    top: 0;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: var(--azul-principal);
-    border-radius: 4px;
+.required_list > li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
 }
-
-/* corrige o placeholder */
-.login_campo:focus-within > input::placeholder,
-.login_campo:hover > input::placeholder {
-    opacity: 1;
+.required_list > li > p{
+    margin-left: 30px;
 }
-
-/* mensagem de erro geral */
-#login_error {
-    position: static;
-    text-align: center;
-    margin-top: -10px;
+.fa-regular.fa-circle-check {
+    position: absolute;
+    display: none;
+    color: rgb(0, 216, 0);
+}
+.fa-regular.fa-circle-xmark {
+    position: absolute;
+    color: rgb(216, 0, 0);
 }
 
 .validation_msg {
@@ -194,4 +193,18 @@ a:hover {
     top: 40px;
     font-size: 12px;
     color: rgb(216, 0, 0);
+}
+
+/* olho de senha */
+.register_campo {
+    position: relative; /* já tem */
+}
+
+#olho_senha, #olho_confirmar {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--texto-medio);
 }

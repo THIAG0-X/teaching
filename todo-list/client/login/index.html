@@ -1,32 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>todolist</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <section class="login_section">
-            <h1 class="login_title">Faça seu login</h1>
-            <form class="login_form">
-                
-                <div class="login_campo">
-                    <label for="iemail">E-mail:</label>
-                    
-                    <input type="email" name="email" id="iemail" placeholder="Insira seu email" autocomplete="email" required>
-                </div>
+      <section class="login_section">
+        <h1 class="login_title">Faça seu login</h1>
+        <form class="login_form">
 
-                <div class="login_campo">
-                    <label for="isenha">Senha:</label>
+          <div class="login_campo">
+            <input
+              type="email"
+              name="email"
+              id="iemail"
+              placeholder="Insira seu email"
+              autocomplete="email"
+            />
+            <label for="iemail">E-mail:</label>
+            <p class="validation_msg" id="email_empty">Digite seu email!</p>
+            <p class="validation_msg" id="email_invalid">Email inválido!</p>
+          </div>
 
-                    <input type="password" name="senha" id="isenha" placeholder="Insira sua senha" autocomplete="current-password" required>
-                </div>
-                <button type="submit" class="login_btn">Entrar</button>
-                <a href="#">Não tem login? Cadastra-se!</a>
-            </form>
-        </section>
+          <div class="login_campo">
+            <input
+              type="password"
+              name="senha"
+              id="isenha"
+              placeholder="Insira sua senha"
+              autocomplete="current-password"
+            />
+            <label for="isenha">Senha:</label>
+            <i class="fa-regular fa-eye" id="olho_senha"></i>
+            <p class="validation_msg" id="senha_empty">Digite sua senha!</p>
+          </div>
+
+          <p class="validation_msg" id="login_error">Credenciais inválidas!</p>
+
+          <button type="submit" class="login_btn">Entrar</button>
+          <a href="../registro/registro.html">Não tem conta? Cadastra-se!</a>
+        </form>
+      </section>
     </div>
-</body>
+    <script type="module" src="../script.js"></script>
+  </body>
 </html>

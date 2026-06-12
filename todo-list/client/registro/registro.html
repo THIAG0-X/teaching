@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="registro.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>todolist</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="register_section">
+        <h1 class="register_title">Crie sua conta</h1>
+        <form class="register_form">
+
+          <!--campos de formulário-->
+
+          <div class="register_campo">
+            <input
+            type="text"
+            name="name"
+            id="inome"
+            placeholder="Insira seu nome"
+            autocomplete="name"
+            />
+            <label for="inome">Nome:</label>
+            <p class="validation_msg" id="nome_empty">Digite seu nome!</p>
+          </div>
+
+          <div class="register_campo">
+            <input
+            type="email"
+            name="email"
+            id="iemail"
+            placeholder="Insira seu email"
+            autocomplete="email"
+            />
+            <label for="iemail">E-mail:</label>
+            <p class="validation_msg" id="email_empty">Digite seu email!</p>
+            <p class="validation_msg" id="email_invalid">Esse email é inválido!</p>
+          </div>
+
+          <div class="register_campo">
+            <input
+            type="password"
+            name="senha"
+            id="isenha"
+            placeholder="Insira sua senha"
+            autocomplete="new-password"
+            />
+            <label for="isenha">Senha:</label>
+            <i class="fa-regular fa-eye" id="olho_senha"></i>
+            <p class="validation_msg" id="senha_empty">Digite sua senha!</p>
+          </div>
+
+          <div class="register_campo">
+            <input
+            type="password"
+            name="confirmarsenha"
+            id="iconfirmarsenha"
+            placeholder="Confirme sua senha"
+            autocomplete="new-password"
+            />
+            <label for="iconfirmarsenha">Confirmar Senha:</label>
+            <i class="fa-regular fa-eye" id="olho_confirmar"></i>
+            <p class="validation_msg" id="confirmar_empty">Confirme sua senha!</p>
+            <p class="validation_msg" id="confirmar_invalid">As senhas não coincidem!</p>
+          </div>
+
+          <!--lista de requisitos de senha-->
+
+          <ul class="required_list ">
+            <li>
+                <i class="fa-regular fa-circle-check"
+                id="check_tamanho"></i>
+                <i class="fa-regular fa-circle-xmark" id="x_tamanho"></i>
+                <p>Deve ter pelo menos 8 caracteres;</p>
+            </li>
+            <li>
+                <i class="fa-regular fa-circle-check"
+                id="check_maiuscula"></i>
+                <i class="fa-regular fa-circle-xmark" id="x_maiuscula"></i>
+                <p>Deve ter uma letra maiuscula;</p>
+            </li>
+            <li>
+                <i class="fa-regular fa-circle-check"
+                id="check_minuscula"></i>
+                <i class="fa-regular fa-circle-xmark" id="x_minuscula"></i>
+                <p>Deve ter uma letra minuscula;</p>
+            </li>
+            <li>
+                <i class="fa-regular fa-circle-check"
+                id="check_numero"></i>
+                <i class="fa-regular fa-circle-xmark" id="x_numero"></i>
+                <p>Deve ter um número;</p>
+
+            </li>
+            <li>
+                <i class="fa-regular fa-circle-check" id="check_simbolo">  
+                </i>
+                <i class="fa-regular fa-circle-xmark" id="x_simbolo"></i>
+                <p>Deve ter um símbolo especial(@, #, _, $).</p>
+            </li>
+          </ul>
+
+          <button 
+            type="submit" 
+            class="register_btn" 
+            id="registerBtn">Cadastrar</button>
+
+          <a href="../login/index.html">Já tem conta? Faça login!</a>
+        </form>
+      </section>
+    </div>
+    <script type="module" src="../script.js"></script>
+  </body>
+</html>

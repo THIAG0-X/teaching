@@ -13,3 +13,16 @@ html,body {
     height: 100%;
     font-family: "Poppins", sans-serif;
 }
+
+:root {
+    --azul-principal: rgba(70, 110, 235, 0.65);
+    --azul-hover: rgba(70, 110, 235, 0.82);
+    --azul-foco: rgba(70, 110, 235, 0.55);
+    --texto-escuro: rgba(40, 40, 40, 0.92);
+    --texto-medio: rgba(80, 80, 80, 0.75);
+    --texto-suave: rgba(80, 80, 80, 0.55);
+    --branco-glass: rgba(255, 255, 255, 0.42);
+    --branco-glass-forte: rgba(255, 255, 255, 0.65);
+    --borda-glass: rgba(255, 255, 255, 0.45);
+    --borda-input: rgba(200, 200, 200, 0.75);
+}

@@ -22,7 +22,7 @@ if (!localStorage.getItem('token')) {
     window.location.href = '../login/index.html'
 }
 
-const usuario = JSON.parse(localStorage.getItem('usuario'))
+//const usuario = JSON.parse(localStorage.getItem('usuario'))
 
 if (usuario) {
     document.querySelector('#user_name').textContent = usuario.name

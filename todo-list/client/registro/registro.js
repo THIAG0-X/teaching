@@ -148,7 +148,8 @@ if (register_form) {
 
             // salvar token
             localStorage.setItem('token', data.access_token)
-            //localStorage.setItem('usuario', JSON.stringify(data.user))
+            //
+            // localStorage.setItem('usuario', JSON.stringify(data.user))
 
             // redirecionar
             window.location.href = '../tarefas/tarefas.html'

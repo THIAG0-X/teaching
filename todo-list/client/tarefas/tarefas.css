@@ -1,0 +1,228 @@
+@import url("../global.css");
+
+.container {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg,
+        rgb(190, 222, 252),
+        rgb(190, 181, 255),
+        rgb(172, 253, 253)
+    );
+}
+
+/* seção principal */
+.todolist_section {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 40px 35px;
+
+    /* glass */
+    background: var(--branco-glass);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1.5px solid var(--borda-glass);
+    border-radius: 20px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.todolist_section > h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+/* formulário de criar tarefa */
+.task_form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.task_form > input {
+    flex: 1 1 140px;
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 14px;
+    outline: none;
+    color: var(--texto-escuro);
+    background-color: rgba(255, 255, 255, 0.45);
+    border: 1.5px solid var(--borda-input);
+    transition: border-color .3s ease, background-color .3s ease, box-shadow .3s ease;
+}
+
+.task_form > input::placeholder {
+    color: var(--texto-suave);
+}
+
+.task_form > input:focus {
+    border-color: var(--azul-foco);
+    background-color: var(--branco-glass-forte);
+    box-shadow: 0 0 0 3px rgba(70, 110, 235, 0.12);
+}
+
+.add_btn {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid var(--borda-glass);
+    background-color: var(--azul-principal);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background-color .3s ease, transform .1s ease, box-shadow .3s ease;
+    box-shadow: 0 4px 14px rgba(70, 110, 235, 0.3);
+}
+
+.add_btn:hover {
+    background-color: var(--azul-hover);
+    box-shadow: 0 6px 18px rgba(70, 110, 235, 0.4);
+}
+
+.add_btn:active {
+    transform: scale(0.95);
+}
+
+/* lista de tarefas */
+.task_list {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: 14px;
+}
+
+/* cada item de tarefa (criado via JS) */
+.task_box {
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.35);
+    border: 1.5px solid var(--borda-glass);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.task_box:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.task_box > p {
+    color: var(--texto-escuro);
+    font-size: 14px;
+}
+
+.task_box > p:first-child {
+    flex: 1 1 100%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.task_box > p:nth-child(2) {
+    flex: 1 1 auto;
+    color: var(--texto-medio);
+}
+
+.task_box > p:nth-child(3) {
+    flex: 0 0 auto;
+    font-size: 13px;
+    color: var(--texto-suave);
+    padding: 3px 10px;
+    border-radius: 8px;
+    background: rgba(70, 110, 235, 0.12);
+}
+
+/* botões de editar/excluir dentro da tarefa */
+.task_box > button {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--borda-glass);
+    background-color: rgba(255, 255, 255, 0.4);
+    color: var(--texto-medio);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color .2s ease, color .2s ease, transform .1s ease;
+}
+
+.task_box > button:hover {
+    background-color: var(--azul-principal);
+    color: white;
+}
+
+.task_box > button:active {
+    transform: scale(0.92);
+}
+
+/* formulário de edição (criado via JS dentro da task_box) */
+.form_edit {
+    flex: 1 1 100%;
+    display: none; /* controlado via JS */
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 14px;
+    border-top: 1px solid var(--borda-glass);
+}
+
+.form_edit > input {
+    flex: 1 1 140px;
+    border-radius: 8px;
+    padding: 9px 10px;
+    font-size: 13px;
+    outline: none;
+    color: var(--texto-escuro);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1.5px solid var(--borda-input);
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.form_edit > input:focus {
+    border-color: var(--azul-foco);
+    box-shadow: 0 0 0 3px rgba(70, 110, 235, 0.12);
+}
+
+.form_edit > button {
+    flex: 0 0 auto;
+    padding: 9px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--borda-glass);
+    background-color: var(--azul-principal);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .1s ease;
+}
+
+.form_edit > button:hover {
+    background-color: var(--azul-hover);
+}
+
+.form_edit > button:active {
+    transform: scale(0.97);
+}

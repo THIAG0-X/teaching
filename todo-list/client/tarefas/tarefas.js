@@ -15,9 +15,8 @@ function getAuthHeaders() {
     }
 }
 
-// =======================================
-// PROTEGE A PÁGINA: sem token, não entra
-// =======================================
+
+// protege a página: sem token não entra
 if (!localStorage.getItem('token')) {
     window.location.href = '../login/index.html'
 }
@@ -28,9 +27,8 @@ if (usuario) {
     document.querySelector('#user_name').textContent = usuario.name
     document.querySelector('#user_avatar').textContent = usuario.name.charAt(0).toUpperCase()
 }
-// =======================================
-// BUSCAR TAREFAS (GET) - roda quando a página carrega
-// =======================================
+
+// buscar tarefas (GET) - roda quando a página carrega
 async function buscarTarefas() {
     try {
         const response = await fetch(API_URL + '/tasks', {
@@ -56,9 +54,8 @@ async function buscarTarefas() {
 // dispara a busca automaticamente quando a página termina de carregar
 document.addEventListener('DOMContentLoaded', buscarTarefas)
 
-// =======================================
-// CRIAR TAREFA (POST)
-// =======================================
+
+// criar tarefa (POST)
 async function criarTarefa() {
     const title = document.querySelector("#ititle").value
     const description = document.querySelector("#idescription").value
@@ -96,9 +93,8 @@ async function criarTarefa() {
     }
 }
 
-// =======================================
-// RENDERIZAR (cria o HTML de UMA tarefa na tela)
-// =======================================
+
+// renderizar - cria o HTML de uma tarefa na tela
 function renderizarTarefa(task) {
     const taskBox = document.createElement('div')
     taskBox.className = 'task_box'
@@ -138,9 +134,7 @@ function renderizarTarefa(task) {
     saveBtn.addEventListener('click', () => editarTarefa(ptitle, pdescription, pdate, formEdit, task.id))
 }
 
-// =======================================
-// EXCLUIR TAREFA (DELETE)
-// =======================================
+// excluir tarefa (DETELE)
 async function excluirTarefa(id, taskBox) {
     try {
         const response = await fetch(API_URL + '/tasks/' + id, {
@@ -161,9 +155,7 @@ async function excluirTarefa(id, taskBox) {
     }
 }
 
-// =======================================
-// EDITAR TAREFA (PUT)
-// =======================================
+// editar tarefa (PUT)
 async function editarTarefa(ptitle, pdescription, pdate, formEdit, id) {
     const editTitle = formEdit.querySelector('.editTitle').value
     const editDescription = formEdit.querySelector('.editDescription').value
@@ -205,9 +197,7 @@ function mostrarEdicao(formEdit) {
     }
 }
 
-// =======================================
-// LOGOUT 
-// =======================================
+// logout
 function logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('usuario')
@@ -215,3 +205,5 @@ function logout() {
 }
 
 window.logout = logout
+
+addBtn.addEventListener('click', () => criarTarefa())

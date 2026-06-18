@@ -148,9 +148,10 @@ if (register_form) {
 
             // salvar token
             localStorage.setItem('token', data.access_token)
+            //localStorage.setItem('usuario', JSON.stringify(data.user))
 
             // redirecionar
-            window.location.href = '../tarefas/index.html'
+            window.location.href = '../tarefas/tarefas.html'
 
         } catch (error) {
             const msgErro = document.querySelector('#register_error')

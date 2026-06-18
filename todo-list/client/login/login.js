@@ -77,7 +77,7 @@ if (login_form) {
 
             // salva o token para usar nas requisições de tarefas
             localStorage.setItem('token', data.access_token)
-            //localStorage.setItem('usuario', JSON.stringify(data.user))
+            localStorage.setItem('usuario', JSON.stringify(data.user))
 
             // redireciona para a página de tarefas
             window.location.href = '../tarefas/tarefas.html'

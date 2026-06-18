@@ -22,7 +22,7 @@ if (!localStorage.getItem('token')) {
     window.location.href = '../login/index.html'
 }
 
-//const usuario = JSON.parse(localStorage.getItem('usuario'))
+const usuario = JSON.parse(localStorage.getItem('usuario'))
 
 if (usuario) {
     document.querySelector('#user_name').textContent = usuario.name
@@ -206,20 +206,12 @@ function mostrarEdicao(formEdit) {
 }
 
 // =======================================
-// LOGOUT (extra, mas recomendado)
+// LOGOUT 
 // =======================================
-//function logout() {
-  //  localStorage.removeItem('token')
- //   window.location.href = '../login/index.html'
-//}
+function logout() {
+    localStorage.removeItem('token')
+    localStorage.removeItem('usuario')
+    window.location.href = '../login/index.html'
+}
 
-//addBtn.addEventListener('click', () => criarTarefa())
-
-//function logout() {
-   // localStorage.removeItem('token')
-   /// localStorage.removeItem('usuario')
-   // window.location.href = '../login/index.html'
-//}
-
-//const logoutBtn = document.querySelector('#logout_btn')
-//logoutBtn.addEventListener('click', logout)
+window.logout = logout

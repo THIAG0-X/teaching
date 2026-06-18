@@ -226,3 +226,58 @@
 .form_edit > button:active {
     transform: scale(0.97);
 }
+
+/* header bar */
+.header_bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user_profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user_avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--azul-principal);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_profile > span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto-escuro);
+}
+
+.user_profile > i {
+    font-size: 11px;
+    color: var(--texto-suave);
+}
+
+.logout_btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--borda-glass);
+    background-color: rgba(255, 255, 255, 0.4);
+    color: var(--texto-medio);
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.logout_btn:hover {
+    background-color: var(--azul-principal);
+    color: white;
+}

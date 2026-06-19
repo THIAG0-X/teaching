@@ -17,17 +17,18 @@ function getAuthHeaders() {
 
 
 // protege a página: sem token não entra
-if (!localStorage.getItem('token')) {
+if (container && !localStorage.getItem('token')) {
     window.location.href = '../login/index.html'
 }
 
-const usuario = JSON.parse(localStorage.getItem('usuario'))
+if (container) {
+    const usuario = JSON.parse(localStorage.getItem('usuario'))
 
-if (usuario) {
-    document.querySelector('#user_name').textContent = usuario.name
-    document.querySelector('#user_avatar').textContent = usuario.name.charAt(0).toUpperCase()
+    if (usuario) {
+        document.querySelector('#user_name').textContent = usuario.name
+        document.querySelector('#user_avatar').textContent = usuario.name.charAt(0).toUpperCase()
+    }
 }
-
 // buscar tarefas (GET) - roda quando a página carrega
 async function buscarTarefas() {
     try {

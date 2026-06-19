@@ -181,7 +181,7 @@
 /* formulário de edição (criado via JS dentro da task_box) */
 .form_edit {
     flex: 1 1 100%;
-    display: none; /* controlado via JS */
+    display: none; 
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;

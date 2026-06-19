@@ -110,4 +110,5 @@ if (login_form) {
     })
 }
 
+// exportar a função principal
 export { entrar }
